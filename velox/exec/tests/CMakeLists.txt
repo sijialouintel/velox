@@ -14,7 +14,7 @@
 add_subdirectory(utils)
 
 add_library(velox_exec_test_lib PlanBuilder.cpp QueryAssertions.cpp Cursor.cpp
-                                OperatorTestBase.cpp HiveConnectorTestBase.cpp)
+        OperatorTestBase.cpp HiveConnectorTestBase.cpp)
 
 target_link_libraries(
   velox_exec_test_lib
@@ -60,7 +60,8 @@ add_executable(
   HybridExecOperatorTest.cpp
   PlanNodeToStringTest.cpp
   FunctionSignatureBuilderTest.cpp
-  UnnestTest.cpp)
+  UnnestTest.cpp
+  SubstraitIRConverterTest.cpp)
 
 add_test(
   NAME velox_exec_test
