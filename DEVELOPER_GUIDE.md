@@ -35,7 +35,8 @@
 8. [Troubleshooting](#8)   
     * 8.1. [Omnisci Velox docker build failed issue](#8.1)  
         * 8.1.1. [The rapidjson build failed issue](#8.1.1) 
-        * 8.1.2. [The Velox build failed issue](#8.1.2)
+        * 8.1.2. [Maven can't parse proxy correctly](#8.1.2)    
+        * 8.1.3. [The Velox build failed issue](#8.1.3) 
     * 8.2. [OmnisciDB internals](#8.2)  
         * 8.2.1. [Joins](#8.2.1)  
         * 8.2.2. [GroupBy](#8.2.2)   
@@ -439,7 +440,11 @@ rapidjson/rapidjson/document.h:2244:22: note: candidate: 'template<unsigned int 
  2244 |     GenericDocument& Parse(const Ch* str) {
       |                      ^~~~~
 
-#### <a name="8.1.2"></a>8.1.2. The Velox build failed issue
+#### <a name="8.1.2"></a>8.1.2. Maven can't parse proxy correctly
+If it raises error related to proxy by Maven, please ensure your settings.xml file (usually ${user.home}/.m2/settings.xml) is secured with permissions appropriate for your operating system.   
+Reference: https://maven.apache.org/guides/mini/guide-proxies.html
+
+#### <a name="8.1.3"></a>8.1.3. The Velox build failed issue
 (1) If it raises error on the code in omniscidb/Catalog/OptionsContainer.h (80-85),
 ![](./velox/docs/develop/images/velox-error1.png)
 please change it to: `options.Parse(options_json.c_str());`   
