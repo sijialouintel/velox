@@ -154,13 +154,13 @@ docker run -d --name omnisci-dev --privileged=true -v ${path/to/Omnisci repo}:/o
 docker exec -it omnisci-dev /bin/bash
 
 # Build Omnisci
-source omniscidb/scripts/omniscidb-env.sh
-bash omniscidb/scripts/build-omnisci-debug.sh
+source omniscidb/scripts/omnisci-env.sh
+bash omniscidb/build-omnisci-debug.sh
 
 # Build Velox
 source velox/scripts/omnisci-env.sh
 # Note to change OMNISCI_DIR and VELOX_DIR according to the repo position   
-bash velox/scripts/build-debug.sh
+bash velox/build-debug.sh
 
 # Setup debug for Omnisci
 # Start ssh server in the docker
@@ -455,8 +455,8 @@ please modified the corresponding code like this:
 enum class ContextScope { GLOBAL, SESSION, QUERY, SCOPESTACK };
 saying: expected identifier before ‘,’ token, please make a modification:
 enum class UseCase {
-// DEV = 1,
-// TEST = 2,
+DEV = 1,
+TEST = 2,
 PROD = 3,
 };
     
