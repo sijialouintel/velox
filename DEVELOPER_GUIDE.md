@@ -212,7 +212,7 @@ Then configure GDB with the built test binaries, like following:
       "name": "PlanConverterTest",    //??
       "type": "cppdbg",
       "request": "launch",
-      "program": "/home/xdy/projects/presto_cpp/build/presto_cpp/presto_protocol/tests/presto_protocol_test",
+      "program": "${path_to_presto_cpp}/build/presto_cpp/presto_protocol/tests/presto_protocol_test",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
